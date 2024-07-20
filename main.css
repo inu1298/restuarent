@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+  top: 0;
+  display: flex;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.header ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.appname {
+  font-size: 20px;
+  float: left;
+}
+.appname {
+  font-size: 20px;
+  float: left;
+}
+.loggedin {
+  text-align: right;
+}
+.loggedin i {
+  font-size: 25px;
+}
+.loggedin i:hover {
+  color: rgba(199, 15, 15, 0.904);
+}
+.icon {
+  color: rgba(199, 15, 15, 0.904);
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav ul li {
+  padding-left: 10px;
+  display: inline;
+  font-weight: bold;
+}
+
+.nav ul li a:hover {
+  color: rgba(199, 15, 15, 0.904);
+}

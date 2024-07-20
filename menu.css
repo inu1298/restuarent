@@ -1,0 +1,7 @@
+.card {
+  padding-top: 50px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  width: 18rem;
+}
