@@ -66,13 +66,12 @@ while ($user = mysqli_fetch_assoc($result)) {
                 <li><a href="../admin/manage_orders.php">Manage Order</a></li>
                 <li><a href="../admin/manage_table.php">Manage Table</a></li>
                 <li><a href="../admin/manage_reservation.php">Manage Reservation</a></li>
-                <li><a href="about.php">About</a></li>
             </ul>
         </div>
         <div class="loggedin flex items-center">Welcome <?php echo $_SESSION['name']; ?>! <a href="../logout.php"><i class='bx bx-log-out text-2xl ms-2 hover:text-red-500'></i></a></div>
     </header>
     <main>
-        <h3>Users List</h3>
+        <h3 class="text-2xl">Users List</h3>
 
         <table class="masterlist">
             <tr>

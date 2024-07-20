@@ -40,20 +40,28 @@ while ($user = mysqli_fetch_assoc($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage User</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header class="flex justify-between">
-        <div class="appname">User Management System</div>
-        <div class="search">
+    <header class="px-4 py-6 flex justify-between bg-neutral-200">
+        <div class="appname text-2xl font-semibold">User Management System</div>
+        <div class="last flex justify-between">
+            <div class="search me-4">
             <form action="user_maneg.php" method="get">
                 <input type="text" name="search" placeholder="Search" value="<?php echo htmlspecialchars($search); ?>" required autofocus>
             </form>
         </div>
-        <div class="loggedin">Welcome <?php echo $_SESSION['name']; ?>! <a href="../logout.php">Log Out</a></div>
+        <div class="loggedin flex items-center">Welcome <?php echo $_SESSION['name']; ?>! <a href="../logout.php"><i class='bx bx-log-out text-2xl ms-2'></i></a></div>
+        </div>
     </header>
     <main>
         
-        <h1>Users <span><a href="add-user.php">+ Add New</a>  |  <a href="user_maneg.php">Back</a></span></h1>
+        <h1 class="flex justify-between items-center py-4">
+            Users
+            <span>
+                <a class="hover:text-red-500" href="add-user.php"><i class='bx bx-plus'></i> Add Users</a> | <a href="admin_page.php" class="hover:text-red-500">Back</a>
+            </span>
+        </h1>
         <table class="masterlist">
             <tr>
                 <th>Name</th>

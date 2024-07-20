@@ -9,6 +9,13 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+if (isset($_GET['search'])) {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+    $query = "SELECT * FROM product WHERE (food_name LIKE '%$search%' OR about_food LIKE '%$search%') AND is_deleted = 0 ORDER BY name";
+} else {
+    $query = "SELECT * FROM product WHERE is_deleted = 0 ORDER BY name";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +35,8 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-  <div class="header flex justify-between align-items-center h-[70px] px-4 w-[100%]">
-      <div class="appname">The Gallery Café</div>
+  <div class="header flex justify-between align-items-center h-[70px] px-4 w-[100%] bg-neutral-950">
+      <div class="appname text-white">The Gallery Café</div>
 
       <div class="nav">
         <ul>
@@ -37,16 +44,21 @@ if (!isset($_SESSION['user_id'])) {
             <li><a href ="menu.php">Menu</a></li>
             <li><a href ="book_table.php">BookTable</a></li>
             <li><a href ="order.html">Order</a></li>
-            <li><a href ="about.php">About</a></li>
         </ul>
+        
+      </div>
+      <div class="flex justify-between">
+        <form action="menu.php" method="get">
+          <input type="text" name="search" placeholder="Search" class="rounded-md p-1" required autofocus>
+        </form>
+        <div class="loggedin flex align-items-top text-white ms-4">Welcome <?php echo $_SESSION['name']; ?>! <a href="logout.php"><i class='bx bx-log-out ms-2 text-white hover:text-red-500' ></i></a></div>
       </div>
 
 
-        <div class="loggedin flex align-items-top">Welcome <?php echo $_SESSION['name']; ?>! <a href="logout.php"><i class='bx bx-log-out ms-2' ></i></a></div>
 
       
   </div>
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
 </body>
 </html>

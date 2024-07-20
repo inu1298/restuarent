@@ -40,19 +40,22 @@ while ($order = mysqli_fetch_assoc($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Orders</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header>
-        <div class="appname">Order Management System</div>
-        <div class="search">
+    <header class="px-4 py-6 flex justify-between bg-neutral-200">
+        <div class="appname text-2xl font-semibold">User Management System</div>
+        <div class="last flex jussity-between">
+            <div class="search me-4">
             <form action="manage_orders.php" method="get">
-                <input type="text" name="search" placeholder="Search" value="<?php echo isset($search) ? htmlspecialchars($search) : ''; ?>" required autofocus>
+                <input type="text" name="search" placeholder="Search" required autofocus>
             </form>
         </div>
-        <div class="loggedin">Welcome <?php echo $_SESSION['name']; ?>! <a href="../logout.php">Log Out</a></div>
+        <div class="loggedin flex items-center">Welcome <?php echo $_SESSION['name']; ?>! <a href="../logout.php"><i class='bx bx-log-out text-2xl ms-2 hover:text-red-500'></i></a></div>
+        </div>
     </header>
     <main>
-        <h1>Orders <span><a href="add_order.php">+ Add New</a></span></h1>
+        <h1 class="flex justify-between items-center py-4">Orders <span class="hover:text-red-500"><a href="add_order.php">+ Add New</a></span></h1>
 
         <?php
         if (isset($_GET['deletion'])) {
@@ -75,6 +78,7 @@ while ($order = mysqli_fetch_assoc($result)) {
             <?php echo $order_list; ?>
         </table>
     </main>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
 <?php mysqli_close($conn); ?>

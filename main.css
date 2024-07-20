@@ -5,21 +5,36 @@
   list-style: none;
   text-decoration: none;
   color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Varela Round", sans-serif;
+}
+
+.img-section {
+  background-image: url(image/back.png);
+  height: 89dvh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image:hover {
+  transform: scale(1.05);
+  transition: all 0.4s ease-in-out;
+}
+
+.image {
+  transition: all 0.4s ease-in-out;
 }
 
 .header {
   top: 0;
   display: flex;
   align-items: center;
-  background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
 
 .header ul li a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .appname {
